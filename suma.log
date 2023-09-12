@@ -1,0 +1,150 @@
+Autor: Guillermo Fernandez Romero
+Fecha: 3-Mayo-2023 15:09
+# | Caracter
+include | Identificador
+< | OperadorRelacional
+stdio | Identificador
+. | Caracter
+h | Identificador
+> | OperadorRelacional
+# | Caracter
+include | Identificador
+< | OperadorRelacional
+math | Identificador
+. | Caracter
+h | Identificador
+> | OperadorRelacional
+# | Caracter
+include | Identificador
+< | OperadorRelacional
+iostream | Identificador
+> | OperadorRelacional
+float | TipoDato
+a | Identificador
+, | Caracter
+b | Identificador
+, | Caracter
+c | Identificador
+; | FinSentencia
+void | Identificador
+main | Identificador
+( | Caracter
+) | Caracter
+{ | Inicio
+a | Identificador
+a = = | Asignacion
+( | Caracter
+3 | Numero
+ 3+ | OperadorTermino
+5 | Numero
+ 5) | Caracter
+ +* | OperadorFactor
+8 | Numero
+ 8- | OperadorTermino
+ *( | Caracter
+10 | Numero
+ 10- | OperadorTermino
+4 | Numero
+ 4) | Caracter
+ -/ | OperadorFactor
+2 | Numero
+ 2; | FinSentencia
+ / - = 61
+b | Identificador
+b = = | Asignacion
+8 | Numero
+ 8; | FinSentencia
+ = 8
+printf | Identificador
+( | Caracter
+"Valor de c = " | Cadena
+, | Caracter
+c | Identificador
+) | Caracter
+; | FinSentencia
+scanf | Identificador
+( | Caracter
+"%f" | Cadena
+, | Caracter
+& | Caracter
+c | Identificador
+) | Caracter
+; | FinSentencia
+if | Condicion
+( | Caracter
+c | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+{ | Inicio
+printf | Identificador
+( | Caracter
+"\nc es par\t\tITQ" | Cadena
+) | Caracter
+; | FinSentencia
+if | Condicion
+( | Caracter
+c | Identificador
+== | OperadorRelacional
+10 | Numero
+ 10) | Caracter
+printf | Identificador
+( | Caracter
+"El valor de c = " | Cadena
+, | Caracter
+c | Identificador
+) | Caracter
+; | FinSentencia
+} | Fin
+else | Condicion
+{ | Inicio
+printf | Identificador
+( | Caracter
+"\nc es impar\t\tITQ" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+b | Identificador
+b = ++ | IncrementoTermino
+; | FinSentencia
+ = 9
+c | Identificador
+c = -- | IncrementoTermino
+; | FinSentencia
+ = 4
+c | Identificador
+c = += | IncrementoTermino
+( | Caracter
+10 | Numero
+ 10- | OperadorTermino
+b | Identificador
+) | Caracter
+ -; | FinSentencia
+ = 5
+b | Identificador
+b = -= | IncrementoTermino
+9 | Numero
+ 9; | FinSentencia
+ = 0
+printf | Identificador
+( | Caracter
+"El valor de a = " | Cadena
+, | Caracter
+a | Identificador
+) | Caracter
+; | FinSentencia
+printf | Identificador
+( | Caracter
+"El valor de b = " | Cadena
+, | Caracter
+b | Identificador
+) | Caracter
+; | FinSentencia
+printf | Identificador
+( | Caracter
+"El valor de d = " | Cadena
+, | Caracter
+d | Identificador
+Error: de sintaxis, la variable <d> no está declarada en la linea 27 columna 32
