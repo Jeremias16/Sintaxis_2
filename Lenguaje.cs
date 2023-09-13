@@ -406,11 +406,11 @@ namespace Sintaxis_2
 
                 if (getContenido() == "{")
                 {
-                    BloqueInstrucciones(ejecutarElse);
+                    BloqueInstrucciones(!ejecutarElse);
                 }
                 else
                 {
-                    Instruccion(ejecutarElse);
+                    Instruccion(!ejecutarElse);
                 }
             }
 
