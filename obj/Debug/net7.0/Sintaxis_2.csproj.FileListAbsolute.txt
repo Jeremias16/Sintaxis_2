@@ -1,0 +1,14 @@
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.exe
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.deps.json
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.runtimeconfig.json
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.dll
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.pdb
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfoInputs.cache
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfo.cs
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.csproj.CoreCompileInputs.cache
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.dll
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\refint\Sintaxis_2.dll
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.pdb
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.genruntimeconfig.cache
+C:\Users\jerem\Documents\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\ref\Sintaxis_2.dll

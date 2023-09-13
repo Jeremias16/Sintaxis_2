@@ -383,11 +383,12 @@ namespace Sintaxis_2
             }
         }
         //If -> if (Condicion) BloqueInstrucciones | Instruccion (else BloqueInstrucciones | Instruccion)?
-        private void If(bool ejecuta)
+       private void If(bool ejecuta)
         {
             match("if");
             match("(");
             bool evaluacion = Condicion() && ejecuta;
+            bool ejecutarElse = false;
             Console.WriteLine(evaluacion);
             match(")");
             if (getContenido() == "{")
@@ -399,17 +400,17 @@ namespace Sintaxis_2
                 Instruccion(evaluacion);
             }
             //uso del else es por separado de lo de arriba 
-            if ((getContenido() == "else"))
+            if (getContenido() == "else")
             {
                 match("else");
 
                 if (getContenido() == "{")
                 {
-                    BloqueInstrucciones(!evaluacion);
+                    BloqueInstrucciones(ejecutarElse);
                 }
                 else
                 {
-                    Instruccion(!evaluacion);
+                    Instruccion(ejecutarElse);
                 }
             }
 

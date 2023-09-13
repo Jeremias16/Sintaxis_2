@@ -1,53 +1,37 @@
-#include <stdio.h>
-#include <math.h>
+// PRUEBA DE FUEGO
+#include<stdio.h>
+#include<math.h>
+#include<iostream>
 
-int altura,i,j;
-float x,y;
+float a,b,c,d;
 
-void main()
+void main() // Funcion principal
 {
-    y = 10;
-    x = 9;
-    x += (3 + 5) * 8 - (10 - 4) / 2; // = 9 + 61 = 70
-    x /= (y-3); // 70 / 7 = 10
-    x --; // 9
-    x *= (x-7); // 18
-    
-    printf("\nValor de altura = ");
-    scanf(&altura);
+    a=(3+5)*8-(10-4)/2;
+    b=19;
+    printf("Valor de c = ");
+    scanf("%f",&c);
+    if (c%2==0)
+    {
 
-    for (i = 1; i<=altura; i++)
-    {
-        for (j = 1; j<=i; j++)
-        {
-            printf(j);
-        }
-        printf("\n");
+        printf("\nc es par\t\tITQ");
+        if (c==10)
+            printf("Se ejecutó el segundo If ",c);
+            a = 70;
     }
-    i = 0;
-    do
+    else
     {
-        printf("-");
-        i++;
+        printf("\nc es impar\tITQ\n");
+        if(c==11)
+            printf("Se ejecutó el segundo if del Else");
     }
-    while (i<altura*2);
-    printf("\n");
-    for (i = 1; i<=altura; i++)
-    {
-        j = 1;
-        while (j<=i)
-        { 
-            printf(j);
-            j++;
-        }
-        printf("\n");
-    }
-    i = 0;
-    do
-    {
-        printf("-");
-        i++;
-    }
-    while (i<altura*2);
-    printf("\n");
+    b++;
+    c--;
+    d = 3;
+    c+=(15-b); //b = 9
+    b-=9;
+    printf("\nEl valor de a = ",a);
+    printf("\nEl valor de b = ",b);
+    printf("\nEl valor de d = ",d);
+    printf("\nEl valor de c = ",c);
 }

@@ -25,6 +25,8 @@ a | Identificador
 b | Identificador
 , | Caracter
 c | Identificador
+, | Caracter
+d | Identificador
 ; | FinSentencia
 void | Identificador
 main | Identificador
@@ -52,14 +54,12 @@ a = = | Asignacion
  / - = 61
 b | Identificador
 b = = | Asignacion
-8 | Numero
- 8; | FinSentencia
- = 8
+19 | Numero
+ 19; | FinSentencia
+ = 19
 printf | Identificador
 ( | Caracter
 "Valor de c = " | Cadena
-, | Caracter
-c | Identificador
 ) | Caracter
 ; | FinSentencia
 scanf | Identificador
@@ -92,59 +92,100 @@ c | Identificador
  10) | Caracter
 printf | Identificador
 ( | Caracter
-"El valor de c = " | Cadena
-, | Caracter
-c | Identificador
+"Se ejecutÃƒÂ³ el segundo If " | Cadena
 ) | Caracter
 ; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"else" | Cadena
+) | Caracter
+; | FinSentencia
+a | Identificador
+a = = | Asignacion
+70 | Numero
+ 70; | FinSentencia
+ = 70
 } | Fin
 else | Condicion
 { | Inicio
 printf | Identificador
 ( | Caracter
-"\nc es impar\t\tITQ" | Cadena
+"\nc es impar\tITQ\n" | Cadena
+) | Caracter
+; | FinSentencia
+if | Condicion
+( | Caracter
+c | Identificador
+== | OperadorRelacional
+11 | Numero
+ 11) | Caracter
+printf | Identificador
+( | Caracter
+"Se ejecutÃƒÂ³ el segundo if del Else" | Cadena
 ) | Caracter
 ; | FinSentencia
 } | Fin
 b | Identificador
 b = ++ | IncrementoTermino
 ; | FinSentencia
- = 9
+ = 20
 c | Identificador
 c = -- | IncrementoTermino
 ; | FinSentencia
- = 4
+ = 6
+d | Identificador
+d = = | Asignacion
+3 | Numero
+ 3; | FinSentencia
+ = 3
 c | Identificador
 c = += | IncrementoTermino
 ( | Caracter
-10 | Numero
- 10- | OperadorTermino
+15 | Numero
+ 15- | OperadorTermino
 b | Identificador
 ) | Caracter
  -; | FinSentencia
- = 5
+ = 1
 b | Identificador
 b = -= | IncrementoTermino
 9 | Numero
  9; | FinSentencia
- = 0
+ = -11
 printf | Identificador
 ( | Caracter
-"El valor de a = " | Cadena
+"\nEl valor de a = " | Cadena
 , | Caracter
 a | Identificador
 ) | Caracter
 ; | FinSentencia
 printf | Identificador
 ( | Caracter
-"El valor de b = " | Cadena
+"\nEl valor de b = " | Cadena
 , | Caracter
 b | Identificador
 ) | Caracter
 ; | FinSentencia
 printf | Identificador
 ( | Caracter
-"El valor de d = " | Cadena
+"\nEl valor de d = " | Cadena
 , | Caracter
 d | Identificador
-Error: de sintaxis, la variable <d> no está declarada en la linea 27 columna 32
+) | Caracter
+; | FinSentencia
+printf | Identificador
+( | Caracter
+"\nEl valor de c = " | Cadena
+, | Caracter
+c | Identificador
+) | Caracter
+; | FinSentencia
+-----------------
+V a r i a b l e s
+-----------------
+a Float = 61
+b Float = -11
+c Float = 1
+d Float = 3
+-----------------
