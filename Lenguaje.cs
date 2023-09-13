@@ -388,7 +388,7 @@ namespace Sintaxis_2
             match("if");
             match("(");
             bool evaluacion = Condicion() && ejecuta;
-            bool ejecutarElse = false;
+            //bool ejecutarElse = false;
             Console.WriteLine(evaluacion);
             match(")");
             if (getContenido() == "{")
@@ -399,18 +399,22 @@ namespace Sintaxis_2
             {
                 Instruccion(evaluacion);
             }
-            //uso del else es por separado de lo de arriba 
-            if (getContenido() == "else")
-            {
-                match("else");
+            //uso del else es por separado de lo de arriba
+          
+            
+                if (getContenido() == "else")
+                {
+                      match("else");
+                    if (ejecuta == true) {
 
-                if (getContenido() == "{")
-                {
-                    BloqueInstrucciones(!ejecutarElse);
-                }
-                else
-                {
-                    Instruccion(!ejecutarElse);
+                    if (getContenido() == "{")
+                    {
+                        BloqueInstrucciones(!evaluacion);
+                    }
+                    else
+                    {
+                        Instruccion(!evaluacion);
+                    }
                 }
             }
 
