@@ -120,72 +120,13 @@ c | Identificador
 == | OperadorRelacional
 11 | Numero
  11) | Caracter
+{ | Inicio
 printf | Identificador
 ( | Caracter
 "Se ejecutÃƒÂ³ el segundo if del Else" | Cadena
 ) | Caracter
 ; | FinSentencia
 } | Fin
-b | Identificador
-b = ++ | IncrementoTermino
-; | FinSentencia
- = 20
-c | Identificador
-c = -- | IncrementoTermino
-; | FinSentencia
- = 6
-d | Identificador
-d = = | Asignacion
-3 | Numero
- 3; | FinSentencia
- = 3
-c | Identificador
-c = += | IncrementoTermino
-( | Caracter
-15 | Numero
- 15- | OperadorTermino
-b | Identificador
-) | Caracter
- -; | FinSentencia
- = 1
-b | Identificador
-b = -= | IncrementoTermino
-9 | Numero
- 9; | FinSentencia
- = -11
-printf | Identificador
-( | Caracter
-"\nEl valor de a = " | Cadena
-, | Caracter
-a | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de b = " | Cadena
-, | Caracter
-b | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de d = " | Cadena
-, | Caracter
-d | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de c = " | Cadena
-, | Caracter
-c | Identificador
-) | Caracter
-; | FinSentencia
------------------
-V a r i a b l e s
------------------
-a Float = 61
-b Float = -11
-c Float = 1
-d Float = 3
------------------
+else | Condicion
+{ | Inicio
+Error: de sintaxis, la variable <{> no está declarada en la linea 35 columna 10

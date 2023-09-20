@@ -14,6 +14,16 @@ using System.Threading.Tasks;
                      Icremento(), Printf(), Factor() y usar getValor y Modifica
                      Levantar una excepcion en scanf() cuando se capture un string
     Requerimiento 4: Implemenar la ejecución del ELSE
+
+    detectar errores semanticos
+    implemantar casteos
+*/
+
+/*
+    Requerimiento 1: Implemenar la ejecución del while 
+    Requerieminto 2: Impelntar la ejecucion del do-while 
+    Requerieminto 3: Implemenar la ejecución del for 
+    Requerimiento 4: Marcar errores semanticos. (se tiene que lanvat exepciones) 
 */
 
 namespace Sintaxis_2
@@ -215,7 +225,7 @@ namespace Sintaxis_2
             log.Write(getContenido() + " = ");
             string variable = getContenido();
             match(Tipos.Identificador);
-        
+
 
             if (getContenido() == "=")
             {
@@ -277,7 +287,7 @@ namespace Sintaxis_2
                     resultado %= getValor(variable);
 
                 }
-                
+
             }
             log.WriteLine(" = " + resultado);
             if (ejecuta)
@@ -383,7 +393,7 @@ namespace Sintaxis_2
             }
         }
         //If -> if (Condicion) BloqueInstrucciones | Instruccion (else BloqueInstrucciones | Instruccion)?
-       private void If(bool ejecuta)
+        private void If(bool ejecuta)
         {
             match("if");
             match("(");
@@ -400,12 +410,13 @@ namespace Sintaxis_2
                 Instruccion(evaluacion);
             }
             //uso del else es por separado de lo de arriba
-          
-            
-                if (getContenido() == "else")
+
+
+            if (getContenido() == "else")
+            {
+                match("else");
+                if (ejecuta == true)
                 {
-                      match("else");
-                    if (ejecuta == true) {
 
                     if (getContenido() == "{")
                     {
@@ -428,7 +439,7 @@ namespace Sintaxis_2
             string comillas = getContenido().Trim('"');
             comillas = comillas.Replace("\\n", "\n");
             comillas = comillas.Replace("\\t", "\t");
-            
+
 
             if (ejecuta)
             {
@@ -463,17 +474,17 @@ namespace Sintaxis_2
             string variable = getContenido();
             match(Tipos.Identificador);
 
-      
+
             if (ejecuta)
             {
-                string captura =  ""+Console.ReadLine();
-                
+                string captura = "" + Console.ReadLine();
+
                 float resultado;
 
                 if (!float.TryParse(captura, out resultado))
                 {
                     throw new Error("Error: La entrada no es un número válido", log, linea, columna);
-                    
+
                 }
                 Modifica(variable, resultado);
             }
