@@ -25,13 +25,13 @@ namespace Sintaxis_2
             return nombre;
         }
 
-        public TiposDatos getTiposDatos()
+        public TiposDatos getTipoDato()
         {
             return this.tipo;
         }
         public void setValor(float valor)
         {
-            this.valor = valor; 
+            this.valor = valor;
         }
         public float getValor()
         {

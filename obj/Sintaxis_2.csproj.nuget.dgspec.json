@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {}
+    "C:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {}
   },
   "projects": {
-    "c:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {
+    "C:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
+        "projectUniqueName": "C:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
         "projectName": "Sintaxis_2",
-        "projectPath": "c:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
+        "projectPath": "C:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
         "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\obj\\",
+        "outputPath": "C:\\Users\\jerem\\Documents\\Sintaxis_2\\Sintaxis_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config"

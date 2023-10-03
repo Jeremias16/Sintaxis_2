@@ -15,7 +15,7 @@ namespace Sintaxis_2
         {
             nextToken();
         }
-        public void match(string token_esperado)
+        protected void match(string token_esperado)
         {
             if (token_esperado == getContenido())
             {
@@ -26,7 +26,7 @@ namespace Sintaxis_2
                 throw new Error("de sintaxis, se espera un <" + token_esperado + ">", log, linea, columna);
             }
         }
-        public void match(Tipos token_esperado)
+        protected void match(Tipos token_esperado)
         {
             if (token_esperado == getClasificacion())
             {

@@ -19,14 +19,14 @@ include | Identificador
 < | OperadorRelacional
 iostream | Identificador
 > | OperadorRelacional
-float | TipoDato
+char | TipoDato
 a | Identificador
-, | Caracter
+; | FinSentencia
+int | TipoDato
 b | Identificador
-, | Caracter
+; | FinSentencia
+float | TipoDato
 c | Identificador
-, | Caracter
-d | Identificador
 ; | FinSentencia
 void | Identificador
 main | Identificador
@@ -35,98 +35,15 @@ main | Identificador
 { | Inicio
 a | Identificador
 a = = | Asignacion
-( | Caracter
-3 | Numero
- 3+ | OperadorTermino
-5 | Numero
- 5) | Caracter
- +* | OperadorFactor
-8 | Numero
- 8- | OperadorTermino
- *( | Caracter
-10 | Numero
- 10- | OperadorTermino
-4 | Numero
- 4) | Caracter
- -/ | OperadorFactor
-2 | Numero
- 2; | FinSentencia
- / - = 61
 b | Identificador
-b = = | Asignacion
-19 | Numero
- 19; | FinSentencia
- = 19
-printf | Identificador
-( | Caracter
-"Valor de c = " | Cadena
-) | Caracter
-; | FinSentencia
-scanf | Identificador
-( | Caracter
-"%f" | Cadena
-, | Caracter
-& | Caracter
++ | OperadorTermino
 c | Identificador
-) | Caracter
 ; | FinSentencia
-if | Condicion
-( | Caracter
-c | Identificador
-% | OperadorFactor
-2 | Numero
- 2== | OperadorRelacional
- %0 | Numero
- 0) | Caracter
-{ | Inicio
-printf | Identificador
-( | Caracter
-"\nc es par\t\tITQ" | Cadena
-) | Caracter
-; | FinSentencia
-if | Condicion
-( | Caracter
-c | Identificador
-== | OperadorRelacional
-10 | Numero
- 10) | Caracter
-printf | Identificador
-( | Caracter
-"Se ejecutÃƒÂ³ el segundo If " | Cadena
-) | Caracter
-; | FinSentencia
-else | Condicion
-printf | Identificador
-( | Caracter
-"else" | Cadena
-) | Caracter
-; | FinSentencia
-a | Identificador
-a = = | Asignacion
-70 | Numero
- 70; | FinSentencia
- = 70
-} | Fin
-else | Condicion
-{ | Inicio
-printf | Identificador
-( | Caracter
-"\nc es impar\tITQ\n" | Cadena
-) | Caracter
-; | FinSentencia
-if | Condicion
-( | Caracter
-c | Identificador
-== | OperadorRelacional
-11 | Numero
- 11) | Caracter
-{ | Inicio
-printf | Identificador
-( | Caracter
-"Se ejecutÃƒÂ³ el segundo if del Else" | Cadena
-) | Caracter
-; | FinSentencia
-} | Fin
-else | Condicion
-{ | Inicio
-Error: de sintaxis, la variable <{> no está declarada en la linea 35 columna 10
+ + = 0
+-----------------
+V a r i a b l e s
+-----------------
+a Char = 0
+b Int = 0
+c Float = 0
+-----------------
