@@ -1,49 +1,22 @@
 Autor: Guillermo Fernandez Romero
 Fecha: 3-Mayo-2023 15:09
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-stdio | Identificador
-. | Caracter
-h | Identificador
-> | OperadorRelacional
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-math | Identificador
-. | Caracter
-h | Identificador
-> | OperadorRelacional
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-iostream | Identificador
-> | OperadorRelacional
-char | TipoDato
-a | Identificador
-; | FinSentencia
-int | TipoDato
-b | Identificador
-; | FinSentencia
-float | TipoDato
-c | Identificador
-; | FinSentencia
-void | Identificador
-main | Identificador
-( | Caracter
-) | Caracter
-{ | Inicio
-a | Identificador
-a = = | Asignacion
-b | Identificador
-+ | OperadorTermino
-c | Identificador
-; | FinSentencia
- + = 0
------------------
-V a r i a b l e s
------------------
-a Char = 0
-b Int = 0
-c Float = 0
------------------
+i =  1 = 1
+For: i
+j =  250 = 250
+For: j
+ 250 + 2 % 0 250 + 2 % 0j =  250 = 250
+For: j
+ 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0j =  250 = 250
+For: j
+ 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0j =  250 = 250
+For: j
+ 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0j =  250 = 250
+For: j
+ 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0 250 + 2 % 0j =  250 = 250
+For: j
+ 250 + 2 % 0i =  1 = 1
+While: i
+j =  250 = 250
+While: j
+ 250 + 2 % 0j =  = 251
+Error: de sintaxis, se espera un <)> en la linea 30 columna 14
