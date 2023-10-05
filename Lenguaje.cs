@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 /*
@@ -299,20 +300,27 @@ namespace Sintaxis_2
             {
                 Variable.TiposDatos tipoDatoVariable = getTipo(variable);
                 Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
-
+                //Variable.TiposDatos tipoDatoMayor = getTipo(mayor);
                // Console.WriteLine(variable + " = "+tipoDatoVariable);
                // Console.WriteLine(resultado + " = "+tipoDatoResultado);
                 //Console.WriteLine("expresion = "+tipoDatoExpresion);
-
-                //Variable.TiposDatos tipoDatoMayor = 
-
+                if(tipoDatoVariable >= tipoDatoExpresion )
+                {
+                    Modifica (variable, resultado);
+                }
+                else
+                {
+                    throw new Error("de semantica, no se puede asignar un <" + tipoDatoExpresion + "> a un <" + tipoDatoVariable + ">", log, linea, columna);
+                }
+             
+               
                 if (tipoDatoVariable >= tipoDatoResultado)
                 {
                     Modifica(variable, resultado);
                 }
                 else
                 {
-                    throw new Error("de semantica, no se puede asignar in <" + tipoDatoResultado + "> a un <" + tipoDatoVariable + ">", log, linea, columna);
+                    throw new Error("de semantica, no se puede asignar un <" + tipoDatoResultado + "> a un <" + tipoDatoVariable + ">", log, linea, columna);
                 }
             }
             match(";");
@@ -360,7 +368,14 @@ namespace Sintaxis_2
         //Do -> do BloqueInstrucciones | Instruccion while(Condicion)
         private void Do(bool ejecuta)
         {
+            int inicia = caracter;
+            int lineaInicio = linea;
+            string variable = getContenido();
             match("do");
+
+             do
+            {
+
             if (getContenido() == "{")
             {
                 BloqueInstrucciones(ejecuta);
@@ -369,29 +384,16 @@ namespace Sintaxis_2
             {
                 Instruccion(ejecuta);
             }
-            int inicia = caracter;
-            int lineaInicio = linea;
-            //float resultado = 0;
-            string variable = getContenido();
-
-            log.WriteLine("While: " + variable);
-            do
-            {
-                ejecuta = Condicion() && ejecuta;
-                match(")");
-                if (getContenido() == "{")
-                {
-                    BloqueInstrucciones(ejecuta);
-                }
-                else
-                {
-                    Instruccion(ejecuta);
-                }
-                if (ejecuta)
+            match("while");
+            match("(");
+            ejecuta = Condicion() && ejecuta;
+            match(")");
+            match(";");
+            if (ejecuta)
                 {
                    // Modifica(variable, resultado);
                     archivo.DiscardBufferedData();
-                    caracter = inicia - variable.Length - 1;
+                    caracter = inicia; 
                     archivo.BaseStream.Seek(caracter, SeekOrigin.Begin);
                     nextToken();
                     linea = lineaInicio;
@@ -399,14 +401,6 @@ namespace Sintaxis_2
                 }
             }
             while (ejecuta);
-            match("while");
-            match("(");
-
-            //Condicion();
-
-
-            match(")");
-            match(";");
         }
         //For -> for(Asignacion Condicion; Incremento) BloqueInstrucciones | Instruccion
 
@@ -587,7 +581,21 @@ namespace Sintaxis_2
                 string captura = "" + Console.ReadLine();
                 float resultado = float.Parse(captura);
                 Modifica(variable, resultado);
+                 Variable.TiposDatos tipoDatoVariable = getTipo(variable);
+                     Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
+
+
+                    //Modifica(variable, resultado);
+                    if (tipoDatoVariable >= tipoDatoResultado)
+                {
+                    Modifica(variable, resultado);
+                }
+                else
+                {
+                    throw new Error("de semantica, no se puede asignar in <" + tipoDatoResultado + "> a un <" + tipoDatoVariable + ">", log, linea, columna);
+                }
             }
+            
             match(")");
             match(";");
         }
@@ -703,60 +711,16 @@ namespace Sintaxis_2
        float castea(float resultado, Variable.TiposDatos tipoDato)
         {
             if (tipoDato == Variable.TiposDatos.Char)
-                {
-                    float TipoDato1;
-
-                    TipoDato1 = resultado;
-                    int resultadoMod; 
-
-                    if( resultado != Math.Round(resultado))
-                    {
-                        resultado = (float)Math.Round(resultado);
-                        resultadoMod = (int)resultado % 256; 
-                        Console.WriteLine("El valor de tipo float; "+ TipoDato1 +" fue casteado a un tipo char");
-                        return (char)resultadoMod;
-                    }
-                    else 
-                    {
-                        resultadoMod = (int)resultado % 256;
-                        resultadoMod = (char)resultadoMod % 256;
-
-                        if (TipoDato1 >= 0 && TipoDato1 <= 255)
-                        {
-                            Console.WriteLine("El "+ resultadoMod + "es de tipo char");
-                        }
-                    }
-                } 
-                if (tipoDato == Variable.TiposDatos.Int)
-                {
-                    float TipoDato1;
-
-                    TipoDato1 = resultado;
-                    int resultadoMod; 
-
-                    if( resultado != Math.Round(resultado))
-                    {
-                        resultado = (float)Math.Round(resultado);
-                        resultadoMod = (int)resultado % 65526; 
-                        Console.WriteLine("El valor de tipo float; "+ TipoDato1 +" fue casteado a un tipo int");
-                        return (char)resultadoMod;
-                    }
-                    else 
-                    {
-                        resultadoMod = (int)resultado % 65526;
-                        resultadoMod = (char)resultadoMod % 65526;
-
-                        if (TipoDato1 >= 256 && TipoDato1 <= 65526)
-                        {
-                            Console.WriteLine("El "+ resultadoMod + "es de tipo char");
-                        }
-                    }
-                } 
-                if (tipoDato == Variable.TiposDatos.Float)
-                {
-                  Console.WriteLine("El "+ resultado + "es de tipo float"); 
-                } 
-            return 0;
+            {
+            resultado = (float)Math.Round(resultado);
+            resultado = (char)resultado % 256; 
+            }
+            else if (tipoDato == Variable.TiposDatos.Int)
+            {
+                resultado = (float)Math.Round(resultado);
+                resultado = (int)resultado % 65526; 
+            }
+            return resultado;
+             }
         }
     }
-}
