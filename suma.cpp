@@ -3,37 +3,18 @@
 #include <iostream>
 
 char altura,i,j,k;
-int p; 
+//int b;
+
 void main() // Funcion principal
 {
 
-p=(char)(257);
 
-
-/*
-    for (i=0; i<10; i++)
-    {
-        printf(" \n hola");
-        k = i;
-    }
-    */
-/*
-    k = (3+5)*8-(10-4)/2; //2
-
-    if (1==1)
-    {
-        k = 2;
-        if (k == 61)
-        {
-            k=3;
-        }
-    }
-    */
+ 
    // k = (int)(10);
    // k = 1.5;
    // k = (char)(1.5);
 
-   /* printf("\nAltura: ");
+   printf("\nAltura: ");
     scanf("&i",&altura);
 
     printf("\nfor:\n");
@@ -67,6 +48,7 @@ p=(char)(257);
     printf("\ndo:\n");
     i = 1;
     do
+
     {
         j = 250;
         do
@@ -77,8 +59,12 @@ p=(char)(257);
                 printf("+");
             j++;
         }while ( j < 250+i );
-                 i++;
+
+                i++;
+
         printf("\n");
+        
     }while ( i <= altura );
-*/
+
 }
+
