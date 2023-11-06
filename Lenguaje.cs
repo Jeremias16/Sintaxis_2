@@ -23,7 +23,7 @@ namespace Sintaxis_2
     {
         List<Variable> lista;
         Stack<float> stack;
-        int contadorIf, contFor, contadorElse, contDo, contWhile;
+        int contIf, contFor, contElse, contDo, contWhile;
 
         Variable.TiposDatos tipoDatoExpresion;
         public Lenguaje()
@@ -31,14 +31,14 @@ namespace Sintaxis_2
             lista = new List<Variable>();
             stack = new Stack<float>();
             tipoDatoExpresion = Variable.TiposDatos.Char;
-            contadorIf = contadorElse = contFor = contDo = contWhile = 1;
+            contIf = contElse = contFor = contDo = contWhile = 1;
         }
         public Lenguaje(string nombre) : base(nombre)
         {
             lista = new List<Variable>();
             stack = new Stack<float>();
             tipoDatoExpresion = Variable.TiposDatos.Char;
-            contadorIf = contadorElse = contFor = contDo = contWhile = 1;
+            contIf = contElse = contFor = contDo = contWhile = 1;
         }
 
         //Programa  -> Librerias? Variables? Main
@@ -637,16 +637,16 @@ namespace Sintaxis_2
             match("(");
             if (primeraVez)
             {
-                asm.WriteLine("; if: " + contadorIf);
+                asm.WriteLine("; if: " + contIf);
             }
-            string etiqueta = "Eif" + contadorIf++;
+            string etiqueta = "Eif" + contIf++;
 
             if (primeraVez)
             {
-                contadorIf++;
+                contIf++;
             }
 
-            string etiquetaelse = "Eelse" + contadorIf++;
+            string etiquetaelse = "Eelse" + contIf++;
 
             bool evaluacion = Condicion(etiqueta, primeraVez);
             
@@ -666,7 +666,7 @@ namespace Sintaxis_2
                 match("else");
                  if (primeraVez)
                 {
-                asm.WriteLine("; else: "+contadorElse);
+                asm.WriteLine("; else: "+contElse);
                 asm.WriteLine("JMP " + etiquetaelse);
                 asm.WriteLine(etiqueta + ":");
                 }
@@ -685,10 +685,10 @@ namespace Sintaxis_2
                 }
                  if (primeraVez)
                 {
-                    contadorElse++;
+                    contElse++;
                 }
             }
-           // primeraVez = false;
+           
         }
         //Printf -> printf(cadena(,Identificador)?);
 private void Printf(bool ejecuta, bool primeraVez)
@@ -720,7 +720,6 @@ private void Printf(bool ejecuta, bool primeraVez)
           
 
             match(Tipos.Cadena);
-            //log.Write("\nllega  <---< "+getContenido());
 
             if (getContenido() == ",")
             {
