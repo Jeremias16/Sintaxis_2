@@ -2,14 +2,31 @@
 #include <math.h>
 #include <iostream>
 
-char altura,i,j,k;
-//int b;
+//char altura,i,j,k;
+int p,i;
 
 void main() // Funcion principal
 {
+    //Para comprobar el ++ , --, =+ , =- ,=*,/= ,%= 
+    printf("\ndame  el valor a hacer las operaciones : ");
+    scanf("&i",&p);
+    p++;
+     printf("\nEl valor cuando se aplica un ++ es  : " , p);
+    p--;
+     printf("\nEl valor cuando se aplica un -- es  : " , p);
+    p+=5;
+     printf("\nEl valor cuando se aplica un += es  : " , p);
+    p-=5;
+     printf("\nEl valor cuando se aplica un -= es  : " , p);
+    p*=2;
+     printf("\nEl valor cuando se aplica un *= es  : " , p);
+    p/=2;
+      printf("\nEl valor cuando se aplica un /= es  : " , p);
+    p%=9;
+     printf("\nEl valor cuando se aplica un %= es  : " , p);
+    
 
-
- 
+ /*
    // k = (int)(10);
    // k = 1.5;
    // k = (char)(1.5);
@@ -65,6 +82,7 @@ void main() // Funcion principal
         printf("\n");
         
     }while ( i <= altura );
+    */
 
 }
 

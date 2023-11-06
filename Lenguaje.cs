@@ -305,7 +305,7 @@ namespace Sintaxis_2
                     resultado += stack.Pop();
                     if (primeraVez){
                     asm.WriteLine("POP AX");
-                    asm.WriteLine("ADD "+variable+ ",AX");
+                    asm.WriteLine("ADD"+variable+ ",AX");
                     }
                 }
                 else if (getContenido() == "-=")
@@ -327,6 +327,7 @@ namespace Sintaxis_2
                     asm.WriteLine("POP BX");
                     asm.WriteLine("MOV AX,"+variable);
                     asm.WriteLine("MUL BX");
+                    asm.WriteLine("MOV "+variable+"AX");
                     }
                 }
                 else if (getContenido() == "/=")
@@ -640,7 +641,7 @@ namespace Sintaxis_2
             }
             string etiqueta = "Eif" + contadorIf++;
 
-            if(primeraVez)
+            if (primeraVez)
             {
                 contadorIf++;
             }
@@ -682,7 +683,7 @@ namespace Sintaxis_2
                 {
                     asm.WriteLine(etiquetaelse + ":");
                 }
-                 if(primeraVez)
+                 if (primeraVez)
                 {
                     contadorElse++;
                 }
@@ -692,45 +693,28 @@ namespace Sintaxis_2
         //Printf -> printf(cadena(,Identificador)?);
 private void Printf(bool ejecuta, bool primeraVez)
         {
-
-            log.Write("A LA FUNCION PRINTF , PRIMERO LLEGA  <----> [" + getContenido() + "]");
-
             match("printf");
             match("(");
 
             if (ejecuta)
             {
-                //se usa Trim('"') para eliminar las comillas de inicio y 
-                //fin de la cadena. Esto asegura que el texto 
-                //impreso en la consola no tenga comillas.
-                string cadena = getContenido().Trim('"'); // Eliminamos las comillas de inicio y fin
-                //string textoparaEsamblador=  getContenido().Trim('"');
-                //string cadena2 = cadena;
-                // Reemplaza las secuencias de escape \\n con \n y \\t con \t en la cadena
-                cadena = cadena.Replace("\\n", "\n"); // Reemplazamos \\n con \    
-                cadena = cadena.Replace("\\t", "\t"); // Reemplazamos \\t con \t
-
-                // Imprime la cadena en la consola
-                log.Write("\n A PRINTF llega  <----> [" + getContenido() + "]");
+                
+                string cadena = getContenido().Trim('"'); 
+                cadena = cadena.Replace("\\n", "\n");   
+                cadena = cadena.Replace("\\t", "\t"); 
                 Console.Write(cadena);
 
-                //cadena2 = cadena2.Replace(@"\n", "'\nprintn '' \nprint '");
-                //asm.WriteLine("print '"+cadena2+"'");
               
-             if(primeraVez)
+             if (primeraVez)
                 {
-                asm.WriteLine("; imprimir mensaje");
                 asm.WriteLine("print '' \n" +"print '"+getContenido().Replace("\"", "").Replace("\\n", "'\nprintn ' ' \nprint '").Replace("\\t", "")+"'");
-                
-                //asm.WriteLine("\n print '" + getContenido().Replace("\"", "").Replace("\\n", "'\nprintn ' '\nprint '").Replace("\\t", "  ") + "'");
                 }
             }
             else{
-                 if(primeraVez)
+                 if (primeraVez)
                 {
-                asm.WriteLine("; imprimir mensaje");
                 asm.WriteLine("print '' \n"+"print '"+getContenido().Replace("\"", "").Replace("\\n", "'\nprintn ' ' \nprint '").Replace("\\t", "")+"'");   
-                  //asm.WriteLine("PRINT '"+getContenido().Replace("\"", "").Replace("\\n", "'\nPRINTN ' '\nPRINT '").Replace("\\t", "  ")+"'");   
+                
                 }
             }
           
@@ -750,7 +734,7 @@ private void Printf(bool ejecuta, bool primeraVez)
                 if (ejecuta)
                 {
                     
-                    if(primeraVez){
+                    if (primeraVez){
                     asm.WriteLine("MOV AX," + getContenido());
                     asm.WriteLine("CALL print_num");
                     asm.WriteLine("PRINTN ''");
@@ -763,7 +747,7 @@ private void Printf(bool ejecuta, bool primeraVez)
                 {
                     //Console.Write(getValor(getContenido()));
                     
-                    if(primeraVez){
+                    if (primeraVez){
                     
                     asm.WriteLine("MOV AX," + getContenido());
                     asm.WriteLine("PRINTN ''");
@@ -776,11 +760,7 @@ private void Printf(bool ejecuta, bool primeraVez)
             }
 
             match(")");
-            log.Write("\n A PRINTF DESPUES DEL MATCH(')') LLEGA <----> [" + getContenido() + "]");
-            log.Write("\n");
             match(";");
-            log.Write("\n");
-            log.Write("\n A PRINTF DESPUES DEL MATCH(';') LLEGA  <----> [" + getContenido() + "]");
         }
        private void Scanf(bool ejecuta, bool primeraVez)
         {
